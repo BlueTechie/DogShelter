@@ -1,0 +1,20 @@
+
+  <div *ngIf="dog">
+    <h2>{{ dog.name }}'s Details</h2>
+    <div class = dog-details>
+      <p><strong>Name:</strong> {{dog.name}}</p>
+      <p><strong>Age:</strong> {{ dog.age }}</p>
+      <p><strong>Sex:</strong> {{ dog.sex }}</p>
+      <p><strong>Color:</strong> {{ dog.color }}</p>
+      <p><strong>Vaccinated:</strong> {{ dog.vaccinated ? 'Yes' : 'No' }}</p>
+
+      <button (click)="goBack()">Back to List</button>
+    </div>
+  </div>
+
+  <div *ngIf="!dog">
+    <div class = dog-details>
+      <p>No dog with this id found</p>
+    </div>
+  </div>
+

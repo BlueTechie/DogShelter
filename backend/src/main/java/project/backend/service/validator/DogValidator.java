@@ -16,14 +16,15 @@ import project.backend.service.DogService;
 public class DogValidator {
 
     public void validateDogName(String name) {
-        if (name == null || !name.matches("[a-zA-Z]+")){
+        System.out.printf("name: ->%s<-\n", name);
+        if (name == null || !name.matches("[a-zA-Z ]+")){
             throw new ValidationException(
                 new ValidationErrorRestDto("Name must only contain letters without spaces", null));
         }
     }
 
     public void validateDogAge(int age){
-        if(age < 1 || age > 31){
+        if(age < 0 || age > 31){
             throw new ValidationException(
                 new ValidationErrorRestDto("Age must be an integer between 1 and 30", null));
         }

@@ -1,0 +1,62 @@
+<h2>{{ inEditMode ? 'Edit dog ' : 'Add dog to the database' }}</h2>
+<div class="dog-form">
+  <form [formGroup]="dogForm" (ngSubmit)="saveDog()">
+    <div>
+      <label>Name:</label>
+      <input type="text" formControlName="name" />
+      <div *ngIf="submitted && f['name'].errors">
+        <small *ngIf="f['name'].errors.required" class="error">Name is required.</small>
+        <small *ngIf="f['name'].errors.pattern" class="error">Name must contain only letters.</small>
+      </div>
+    </div>
+
+    <div>
+      <label>Age:</label>
+      <input type="number" formControlName="age" />
+      <div *ngIf="submitted && f['age'].errors">
+        <small *ngIf="f['age'].errors.required" class="error">Age is required.</small>
+        <small *ngIf="f['age'].errors.min" class="error">Age must be between 0 and 30.</small>
+        <small *ngIf="f['age'].errors.max" class="error">Age must be between 0 and 30.</small>
+      </div>
+    </div>
+
+    <div>
+      <label>Sex:</label>
+      <select formControlName="sex">
+        <option value="MALE">Male</option>
+        <option value="FEMALE">Female</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Vaccinated:</label>
+      <input type="checkbox" formControlName="vaccinated" />
+    </div>
+
+    <div>
+      <label>Color:</label>
+      <select formControlName="color">
+        <option value="BROWN">Brown</option>
+        <option value="WHITE">White</option>
+        <option value="BLACK">Black</option>
+        <option value="GRAY">Gray</option>
+        <option value="GOLDEN">Golden</option>
+        <option value="MIXED">Mixed</option>
+      </select>
+    </div>
+    <div class = "button-container">
+      <button type="submit">{{ inEditMode ? 'Update' : 'Create' }}</button>
+
+      <div *ngIf="inEditMode" class="back-to-list">
+        <button (click)="goBack()">Back to List</button>
+      </div>
+    </div>
+
+  </form>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+
+</div>

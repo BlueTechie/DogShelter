@@ -1,0 +1,97 @@
+h2 {
+  color: #6b28d7;
+  font-size: 24px;
+  margin-top: 50px;
+  padding-left:70px;
+}
+
+.dog-form {
+  flex: 1;
+  max-width: 100%;
+  padding: 20px;
+  background-color: #e7ebf8;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dog-form input, select {
+  padding:5px;
+  margin:10px;
+}
+
+.dog-form input[type="checkbox"] {
+  width: auto;
+  margin-top: 20px;
+  margin-bottom:30px;
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+.dog-form input[type="checkbox"]:hover {
+  transform: scale(1.5);
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+
+}
+
+.dog-form input[type="text"],
+.dog-form input[type="number"],
+.dog-form select {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.dog-form button {
+  padding: 6px 10px;
+  margin: 0px;
+  border-radius: 5px;
+  background-color: #2ad56c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.dog-form button:hover {
+  background-color: #156b36;
+}
+
+.dog-form .back-to-list button{
+  padding: 6px 10px;
+  margin: 0px;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.dog-form .back-to-list button:hover {
+  background-color:#16557f;
+}
+
+.dog-form .button-container {
+  display: flex;
+  justify-content: space-between;  /* This spaces out the buttons */
+  margin-top: 20px; /* Adjusts space between the form and the buttons */
+}

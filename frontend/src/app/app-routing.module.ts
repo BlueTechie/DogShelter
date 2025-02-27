@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExamplePageComponent } from './components';
+import { DogListComponent, DogDetailsComponent, DogFormComponent } from './components';
 
 const routes: Routes = [
-  { path: '', component: ExamplePageComponent },
+  { path: 'edit/:id', component: DogFormComponent },
+  { path: 'dogs/:id', component: DogDetailsComponent }
 ];
 
 @NgModule({

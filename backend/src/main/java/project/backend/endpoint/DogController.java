@@ -41,6 +41,7 @@ public class DogController {
     // Creates a dog
     @PostMapping
     public ResponseEntity<DogDto> createDog(@Valid @RequestBody DogDto dog) {
+        System.out.printf(dog.getName());
         return ResponseEntity.ok(dogService.createDog(dog));
     }
 

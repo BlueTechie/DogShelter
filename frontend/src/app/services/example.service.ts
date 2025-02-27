@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Globals } from 'src/app/global';
 import { Observable } from 'rxjs';
-import { ExampleDto } from '../dtos';
+import { LightDogDto } from '../dtos';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,7 @@ export class ExampleService {
   /**
    * Example Endpoint
    */
-  getExample(): Observable<ExampleDto> {
-    return this.httpClient.get<ExampleDto>(this.exampleBaseUri);
+  getExample(): Observable<LightDogDto> {
+    return this.httpClient.get<LightDogDto>(this.exampleBaseUri);
   }
 }

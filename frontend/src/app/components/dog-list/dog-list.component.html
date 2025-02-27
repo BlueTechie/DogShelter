@@ -1,0 +1,30 @@
+<h2> List of all dogs </h2>
+
+<div class="dog-list">
+  <div *ngIf="dogs.length === 0; else showTable">
+    <p>No dogs stored in the database.</p>
+  </div>
+
+
+  <ng-template #showTable>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Actions</th>
+      </tr>
+
+      <tr *ngFor="let dog of dogs">
+        <td> {{dog.id}}</td>
+        <td>{{dog.name}}</td>
+        <td>{{dog.age}}</td>
+        <td>
+            <button class="delete-button" (click)="deleteDog(dog.id)">Delete</button>
+          <button [routerLink]="['/edit', dog.id]">Edit</button>
+          <button [routerLink]="['/dogs', dog.id]">View Details</button>
+        </td>
+      </tr>
+    </table>
+  </ng-template>
+</div>

@@ -1,2 +1,32 @@
-<h1>APP</h1>
-<router-outlet></router-outlet>
+<html>
+
+<h1>Simple dog shelter application</h1>
+
+<body>
+<div class = container-all>
+  <div class = "paragraph">
+    <h3>Project info:</h3>
+    <p>This project has been implemented with Spring Boot/JPA for the backend and Angular for the front end.</p>
+    <p>It stores data entries in a database corresponding to dogs with the fields id, name, sex, age, vaccination status and color. </p>
+    <p>The user can, through the use of a front-end interface, view what dogs are in the database and perform CRUD operations on said database.</p>
+    <img src="../assets/dog-logo.jpg" alt="dog-logo">
+  </div>
+
+  <div class="database-components">
+    <div class="list-and-form">
+      <div>
+        <app-dog-list [dogs]="dogs"></app-dog-list>
+        <div class="router-container">
+          <router-outlet></router-outlet>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="dog-form">
+      <app-dog-form></app-dog-form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
